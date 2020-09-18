@@ -1,0 +1,358 @@
+@charset "UTF-8";
+@import "data";
+/*-----------------------------------------------------
+  ベース
+------------------------------------------------------*/
+html{
+  padding:0px;
+  margin:0px;
+  font-size: 16px;
+}
+
+body {
+  padding:0px;
+  margin:0px;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+  line-height: 1.6;
+  color: $mainBlackFont;
+  overflow-x: hidden;
+}
+
+h2,h3,h4,h5,h6{
+  padding: 0;
+  margin: 0;
+}
+
+ul,li,dl,dt,dd,table,tr,th,td{
+  padding: 0;
+  margin: 0;
+}
+
+ul,li{
+  list-style:none;
+}
+
+a{
+  text-decoration: none;
+  color: $mainBlackFont;
+  &:hover{
+    text-decoration: none;
+    color: $mainBlackFont;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.brsp{
+  display: none;
+}
+
+.preload *{
+  transition: none!important;
+}
+
+.wrap{
+  padding: 0 16px;
+}
+
+/*-----------------------------------------------------
+  ヘッダー
+------------------------------------------------------*/
+header{
+  background-color: $mainColor;
+}
+
+.header_wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  h1{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
+
+.hamburger{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20px;
+  cursor: pointer;
+  .hamburger_line{
+    display: inline-block;
+    width: 20px;
+    height: 4px;
+    background-color: $mainBlackFont;
+  }
+}
+
+.nav_menu{
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  width: 160px;
+  background-color: rgba($mainColor, 0.9);
+  opacity: 0;
+  transform: translateX(160px);
+  transition: all 0.5s;
+  ul{
+    li{
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.open{
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.hamburger_mask{
+  display: none;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*-----------------------------------------------------
+  メイン
+------------------------------------------------------*/
+/* 共通 ----------------------------------------------*/
+// 見出し
+h2{
+  padding: 10px 0;
+  text-align: center;
+  color: $mainColor;
+  font-weight: bold;
+}
+
+// ボタン
+.button{
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 2em;
+  background-color: $mainColor;
+  box-shadow: 0px 5px darken($mainColor, 30%);
+  font-weight: bold;
+  color: white;
+  &:hover{
+    color: white;
+  }
+  &:active{
+    box-shadow: none;
+    top: 5px;
+  }
+}
+
+.button_wrap{
+  text-align: center;
+}
+
+// エラー表示
+.errors{
+  color: $redFont;
+  ul{
+    li{
+      list-style-type: disc;
+      list-style-position: inside;
+      font-weight: bold;
+    }
+  }
+}
+
+/* トップ --------------------------------------------*/
+.top_view{
+  height: 100vh;
+  background-color: rgba($mainColor, 0.2);
+}
+
+.top_text{
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  h1{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+}
+
+/* クイズ --------------------------------------------*/
+.quiz_view{
+  height: calc(100vh - 50px);
+  background-color: rgba($mainColor, 0.2);
+  .wrap{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.quiz_menu{
+  li:not(:last-child){
+    margin-bottom: 20px;
+  }
+}
+
+/* クイズ一覧画面 --------------------------------------------*/
+.del_message{
+  color: $redFont;
+}
+
+.quiz_list{
+  width: 100%;
+  th,td{
+    padding: 4px 8px;
+    border: 1px solid #000;
+  }
+  th{
+    text-align: center;
+    background-color: $mainColor;
+  }
+  td{
+    background-color: white;
+    a{
+      display: block;
+    }
+  }
+}
+
+/* クイズ登録画面 --------------------------------------------*/
+/* クイズ詳細画面 --------------------------------------------*/
+/* クイズ編集画面 --------------------------------------------*/
+/* クイズ挑戦画面 --------------------------------------------*/
+// クイズ画像
+.quiz_img{
+  max-width: 480px;
+  margin: 0 auto 20px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+// クイズテーブル
+.quiz_table{
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 20px;
+  th,td{
+    padding: 4px 8px;
+    border: 1px solid #000;
+  }
+  th{
+    width: 20%;
+    label{
+      margin: 0;
+    }
+  }
+  td{
+    width: 80%;
+    input[type="text"],textarea{
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border: 1px solid #eee;
+      vertical-align: bottom;
+    }
+  }
+}
+
+// 問題文
+.question{
+  padding: 4px;
+  background-color: white;
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+// 選択肢
+.quiz_answer{
+  margin-bottom: 10px;
+  li{
+    &:not(:last-child){
+      margin-bottom: 4px;
+    }
+    .quiz_choice{
+      width: 100%;
+      padding: 4px;
+      background-color: white;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+
+// 解説文
+.quiz_explain{
+  padding: 4px;
+  background-color: white;
+  border: 1px solid #aaa;
+  .is_correct{
+    color: lightgreen;
+  }
+  .is_incorrect{
+    color: $redFont;
+  }
+  .button_wrap{
+    text-align: right;
+    .button{
+      margin-bottom: 5px;
+    }
+  }
+}
+
+// 結果画面
+.quiz_result{
+  padding: 20px;
+  margin-top: 20px;
+  background-color: white;
+  border: 1px solid #000;
+  p{
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $mainColor;
+    text-align: center;
+  }
+  .button{
+    margin-bottom: 5px;
+  }
+}
+
+
+
+/*-----------------------------------------------------
+  フッター
+------------------------------------------------------*/

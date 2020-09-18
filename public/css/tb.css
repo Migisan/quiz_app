@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* 変数宣言 */
+
+/* mixin */
+
+/*-----------------------------------------------------
+  タブレット
+------------------------------------------------------*/
+
+@media screen and (min-width: 560px) {
+  /*- ベース -----------------------------------------*/
+
+  .wrap {
+    padding: 0 20px;
+  }
+
+  /*- ヘッダー ---------------------------------------*/
+
+  .header_wrap {
+    height: 75px;
+  }
+
+  .header_wrap h1 {
+    font-size: 28px;
+  }
+
+  .hamburger {
+    height: 28px;
+  }
+
+  .hamburger .hamburger_line {
+    width: 28px;
+    height: 4px;
+  }
+
+  .nav_menu {
+    top: 75px;
+  }
+
+  .nav_menu ul li a {
+    padding: 5px 12px;
+    font-size: 1.2rem;
+  }
+
+  .hamburger_mask {
+    top: 75px;
+  }
+
+  /*- メイン -----------------------------------------*/
+
+  h2 {
+    padding: 18px 0;
+  }
+
+  .button {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+  }
+
+  .button_wrap .button + .button {
+    margin-left: 16px;
+  }
+
+  .top_text h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .quiz_view {
+    height: calc(100vh - 75px);
+  }
+
+  .quiz_table {
+    max-width: 500px;
+  }
+
+  /*- フッター ---------------------------------------*/
+}
+

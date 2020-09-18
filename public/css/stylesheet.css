@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+/* 変数宣言 */
+
+/* mixin */
+
+/*-----------------------------------------------------
+  ベース
+------------------------------------------------------*/
+
+html {
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF", YuGothic, "Yu Gothic", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic";
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li,
+dl,
+dt,
+dd,
+table,
+tr,
+th,
+td {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.brsp {
+  display: none;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+.wrap {
+  padding: 0 16px;
+}
+
+/*-----------------------------------------------------
+  ヘッダー
+------------------------------------------------------*/
+
+header {
+  background-color: #34cceb;
+}
+
+.header_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.header_wrap h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger .hamburger_line {
+  display: inline-block;
+  width: 20px;
+  height: 4px;
+  background-color: #333;
+}
+
+.nav_menu {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  width: 160px;
+  background-color: rgba(52, 204, 235, 0.9);
+  opacity: 0;
+  transform: translateX(160px);
+  transition: all 0.5s;
+}
+
+.nav_menu ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.hamburger_mask {
+  display: none;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*-----------------------------------------------------
+  メイン
+------------------------------------------------------*/
+
+/* 共通 ----------------------------------------------*/
+
+h2 {
+  padding: 10px 0;
+  text-align: center;
+  color: #34cceb;
+  font-weight: bold;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 2em;
+  background-color: #34cceb;
+  box-shadow: 0px 5px #0c677a;
+  font-weight: bold;
+  color: white;
+}
+
+.button:hover {
+  color: white;
+}
+
+.button:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+.button_wrap {
+  text-align: center;
+}
+
+.errors {
+  color: #ff3b3b;
+}
+
+.errors ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  font-weight: bold;
+}
+
+/* トップ --------------------------------------------*/
+
+.top_view {
+  height: 100vh;
+  background-color: rgba(52, 204, 235, 0.2);
+}
+
+.top_text {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.top_text h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* クイズ --------------------------------------------*/
+
+.quiz_view {
+  height: calc(100vh - 50px);
+  background-color: rgba(52, 204, 235, 0.2);
+}
+
+.quiz_view .wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz_menu li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* クイズ一覧画面 --------------------------------------------*/
+
+.del_message {
+  color: #ff3b3b;
+}
+
+.quiz_list {
+  width: 100%;
+}
+
+.quiz_list th,
+.quiz_list td {
+  padding: 4px 8px;
+  border: 1px solid #000;
+}
+
+.quiz_list th {
+  text-align: center;
+  background-color: #34cceb;
+}
+
+.quiz_list td {
+  background-color: white;
+}
+
+.quiz_list td a {
+  display: block;
+}
+
+/* クイズ登録画面 --------------------------------------------*/
+
+/* クイズ詳細画面 --------------------------------------------*/
+
+/* クイズ編集画面 --------------------------------------------*/
+
+/* クイズ挑戦画面 --------------------------------------------*/
+
+.quiz_img {
+  max-width: 480px;
+  margin: 0 auto 20px;
+}
+
+.quiz_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+.quiz_table {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.quiz_table th,
+.quiz_table td {
+  padding: 4px 8px;
+  border: 1px solid #000;
+}
+
+.quiz_table th {
+  width: 20%;
+}
+
+.quiz_table th label {
+  margin: 0;
+}
+
+.quiz_table td {
+  width: 80%;
+}
+
+.quiz_table td input[type=text],
+.quiz_table td textarea {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #eee;
+  vertical-align: bottom;
+}
+
+.question {
+  padding: 4px;
+  background-color: white;
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.quiz_answer {
+  margin-bottom: 10px;
+}
+
+.quiz_answer li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.quiz_answer li .quiz_choice {
+  width: 100%;
+  padding: 4px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.quiz_explain {
+  padding: 4px;
+  background-color: white;
+  border: 1px solid #aaa;
+}
+
+.quiz_explain .is_correct {
+  color: lightgreen;
+}
+
+.quiz_explain .is_incorrect {
+  color: #ff3b3b;
+}
+
+.quiz_explain .button_wrap {
+  text-align: right;
+}
+
+.quiz_explain .button_wrap .button {
+  margin-bottom: 5px;
+}
+
+.quiz_result {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: white;
+  border: 1px solid #000;
+}
+
+.quiz_result p {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #34cceb;
+  text-align: center;
+}
+
+.quiz_result .button {
+  margin-bottom: 5px;
+}
+
+/*-----------------------------------------------------
+  フッター
+------------------------------------------------------*/
+

@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import "data";
+/*-----------------------------------------------------
+  タブレット
+------------------------------------------------------*/
+@media screen and (min-width:560px){
+  /*- ベース -----------------------------------------*/
+  .wrap{
+    padding: 0 20px;
+  }
+
+  /*- ヘッダー ---------------------------------------*/
+  .header_wrap{
+    height: 75px;
+    h1{
+      font-size: 28px;
+    }
+  }
+
+  .hamburger{
+    height: 28px;
+    .hamburger_line{
+      width: 28px;
+      height: 4px;
+    }
+  }
+  
+  .nav_menu{
+    top: 75px;
+    ul{
+      li{
+        a{
+          padding: 5px 12px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .hamburger_mask{
+    top: 75px;
+  }
+
+  /*- メイン -----------------------------------------*/
+  // 共通
+  // 見出し
+  h2{
+    padding: 18px 0;
+  }
+
+  // ボタン
+  .button{
+    padding: 10px 15px;
+    font-size: 1.2rem;
+  }
+
+  .button_wrap{
+    .button + .button{
+      margin-left: 16px;
+    }
+  }
+
+  // トップ
+  .top_text{
+    h1{
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+  }
+
+  // クイズ
+  .quiz_view{
+    height: calc(100vh - 75px);
+  }
+
+  // クイズ登録画面
+  // クイズ詳細画面
+  // クイズ編集画面
+  // クイズ挑戦画面
+  // クイズテーブル
+  .quiz_table{
+    max-width: 500px;
+  }
+
+  /*- フッター ---------------------------------------*/
+
+}
